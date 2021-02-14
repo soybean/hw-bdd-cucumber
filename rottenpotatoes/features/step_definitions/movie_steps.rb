@@ -1,7 +1,15 @@
 # Add a declarative step here for populating the DB with movies.
 
+myMovie = Movie.create("Alladin", "G", "25-Nov-1992")
+puts ("MOVIE WAS CREATED")
+puts myMovie
+movies_table.each do |movie|
+	puts movie
+end
+puts "Done"
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
+      puts movie
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
   end

@@ -23,6 +23,21 @@ Background: movies have been added to database
   Then 10 seed movies should exist
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
+  When I check("PG")
+  And I check("R")
+  And I uncheck("G")
+  And I uncheck("PG-13")
+  And I press "Submit"
+  Then I should see "Raiders of the Lost Ark"
+  And I should see "The Incredibles"
+  And I should see "Amelie"
+  And I should see "When Harry Met Sally"
+  And I should see "The Terminator"
+  And I should not see "Chicken Run"
+  And I should not see "2001: A Space Odyssey"
+  And I should not see "The Help"
+  And I should not see "Chocolat"
+  And I should not see "Aladdin"
   # enter step(s) to check the 'PG' and 'R' checkboxes
   # enter step(s) to uncheck all other checkboxes
   # enter step to "submit" the search form on the homepage

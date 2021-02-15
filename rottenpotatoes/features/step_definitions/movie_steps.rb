@@ -27,10 +27,9 @@ end
 When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 	rating_list.split().each do |rating|
 		if uncheck then 
-			puts "hey"
-			uncheck(rating) 
+			Then I uncheck rating
 		else 
-			check(rating)
+			Then I check rating
 		end
 	end
 
